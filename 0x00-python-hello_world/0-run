@@ -1,3 +1,3 @@
 #!/bin/bash
-print("C is fun!")
 python $PYFILE
+print("C is fun!")
