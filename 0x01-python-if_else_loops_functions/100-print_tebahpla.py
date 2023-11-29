@@ -1,13 +1,7 @@
 #!/usr/bin/python3
+# Author - Godswill Kalu
 
-output = ""
-upper = True
-
-for i in range(90, 64, -1):
-    if upper:
-        output += chr(i) 
-    else:
-        output += chr(i).lower()
-    upper = not upper
-
-print(output[::-1], end='')
+i = 0
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(c - i)), end="")
+    i = 32 if i == 0 else 0
