@@ -4,10 +4,10 @@ output = ""
 upper = True
 
 for i in range(90, 64, -1):
-    if upper: 
-        output += chr(i).upper()
+    if upper:
+        output += "{}".format(chr(i)) 
     else:
-        output += chr(i).lower()
+        output += "{}".format(chr(i).lower())
     upper = not upper
 
-print(output[::-1], end='')
+print("{}"[::-1].format(output), end='')
