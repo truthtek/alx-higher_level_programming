@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 output = ""
-upper = True 
+upper = True
 
 for i in range(90, 64, -1):
     if upper:
-        output += "{}".format(chr(i))
+        output += chr(i) 
     else:
-        output += "{}".format(chr(i).lower()) 
+        output += chr(i).lower()
     upper = not upper
 
-print("{0}"[::-1].format(output), end='')
+print(output[::-1], end='')
