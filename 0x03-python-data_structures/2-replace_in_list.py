@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-my_list = [1, 2, 3]
-new_list = replace_in_list(my_list, 0, 5)
-print(new_list) # [5, 2, 3]  
-
-no_change = replace_in_list(my_list, -1, 5) 
-print(no_change) # [1, 2, 3] - no change
+def replace_in_list(my_list, idx, element):
+    if idx < 0 or idx > len(my_list) - 1:
+        return my_list
+    else:
+        my_list[idx] = element
+        return my_list
