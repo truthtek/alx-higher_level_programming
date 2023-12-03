@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-def switch_values(a, b):
-    # Insert your code here
-    a, b = b, a
-    return a, b
+a = 89
+b = 7
 
-# Example usage:
-a = 5
-b = 10
-a, b = switch_values(a, b)
-print(a, b)  # Output: 10 5
+a, b = b, a
+
+print("a = {}".format(a))
+print("b = {}".format(b))
