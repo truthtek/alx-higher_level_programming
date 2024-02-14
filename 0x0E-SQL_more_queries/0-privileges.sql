@@ -1,15 +1,14 @@
-#!/bin/bash
+-- Create user_0d_1 if it doesn't exist
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_password';
 
-# Script to list all privileges of MySQL users user_0d_1 and user_0d_2 on localhost
+-- Grant all privileges to user_0d_1
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
 
-# MySQL credentials
-MYSQL_USER="root"  # Change this to your MySQL username if it's different
-MYSQL_PASSWORD="your_mysql_password"  # Change this to your MySQL password
+-- Create user_0d_2 if it doesn't exist
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_2_password';
 
-# MySQL query to list privileges of user_0d_1
-echo "Privileges for user_0d_1:"
-mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW GRANTS FOR 'user_0d_1'@'localhost';"
+-- Grant necessary privileges to user_0d_2
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'user_0d_2'@'localhost';
 
-# MySQL query to list privileges of user_0d_2
-echo "Privileges for user_0d_2:"
-mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW GRANTS FOR 'user_0d_2'@'localhost';"
+-- Flush privileges to apply changes
+FLUSH PRIVILEGES;
