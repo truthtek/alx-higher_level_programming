@@ -1,14 +1,8 @@
 #!/usr/bin/python3
 
+
 def find_peak(list_of_integers):
-    """Finds a peak element in a list of integers using binary search.
 
-    Args:
-        list_of_integers (list): A list of integers.
-
-    Returns:
-        int or None: The peak element if found, None if list is empty or None.
-    """
     if list_of_integers is None or len(list_of_integers) == 0:
         return None
 
@@ -18,7 +12,7 @@ def find_peak(list_of_integers):
     mid_idx = int(len(list_of_integers) / 2)
 
     if mid_idx != len(list_of_integers) - 1:
-        if list_of_integers[mid_idx - 1] < list_of_integers[mid_idx] and \
+        if list_of_integers[mid_idx - 1] < list_of_integers[mid_idx] and\
            list_of_integers[mid_idx + 1] < list_of_integers[mid_idx]:
             return list_of_integers[mid_idx]
     else:
