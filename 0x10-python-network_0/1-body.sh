@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends a GET request to a URL without redirection
-curl -sL -w "%{http_code}" -o /dev/null "$1"
+# takes in a URL, sends a request to that URL, and displays the size of the body of the response
+curl -sX GET $1 -L
